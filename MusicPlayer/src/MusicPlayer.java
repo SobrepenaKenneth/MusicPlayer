@@ -1,8 +1,10 @@
+
 import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.*;
 
 public class MusicPlayer {
+
     private Clip clip;
 
     public void play(String filePath) {
@@ -20,6 +22,16 @@ public class MusicPlayer {
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
+    }
+
+    public void pause() {
+        long clipTime;
+        clipTime = clip.getMicrosecondPosition();
+        clip.stop();
+
+        clip.setMicrosecondPosition(clipTime);
+        clip.start();
+
     }
 
     public void stop() {

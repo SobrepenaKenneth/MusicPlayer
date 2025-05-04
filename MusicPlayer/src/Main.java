@@ -19,10 +19,10 @@ public class Main extends JFrame {
         //Make an art for redPanel 980x250
         // hope this works animation test
         // Green Panel button
-        ImageButton animatedButton = new ImageButton();
+        playButton animatedButton = new playButton();
 
         // Acosta pixel art
-        ImageIcon acostaArt1 = new ImageIcon("src/assets/art1.jpg");
+        ImageIcon acostaArt1 = new ImageIcon("src/assets/Acosta_art.png");
         Image scaled2 = acostaArt1.getImage().getScaledInstance(990, 250, Image.SCALE_SMOOTH);
         JLabel imageLabel2 = new JLabel(new ImageIcon(scaled2));
         imageLabel2.setBounds(0, 0, 990, 250);
@@ -68,26 +68,28 @@ public class Main extends JFrame {
         JPanel buttonPlay = new JPanel();
         buttonPlay.setBackground(Color.GREEN);
         buttonPlay.setBounds(40, 150, 129, 60);
+        buttonPlay.setOpaque(true);
 
         JPanel buttonPause = new JPanel();
         buttonPause.setBackground(Color.pink);
         buttonPause.setBounds(200, 150, 129, 60);
+        buttonPause.setLayout(null);
 
         JPanel buttonStop = new JPanel();
         buttonStop.setBackground(Color.CYAN);
         buttonStop.setBounds(360, 150, 129, 60);
 
         JPanel redPanel = new JPanel();
-        redPanel.setBackground(Color.RED);
+        redPanel.setBackground(Color.red);
         redPanel.setBounds(0, 240, 980, 250);
         redPanel.setOpaque(true);
         redPanel.setLayout(null);
 
         JPanel bluePanel = new JPanel();
-        bluePanel.setBackground(Color.BLUE);
+        bluePanel.setBackground(Color.BLACK);
         bluePanel.setBounds(0, 140, 980, 100);
         bluePanel.setLayout(null);
-        bluePanel.setOpaque(false);
+        bluePanel.setOpaque(true);
 
         JPanel yellowPanel = new JPanel();
         yellowPanel.setBackground(Color.YELLOW);
@@ -107,7 +109,7 @@ public class Main extends JFrame {
 
         // PANEL STUFF
         this.add(buttonPause);
-        buttonPlay.add(animatedButton);
+        buttonPause.add(animatedButton);
         bluePanel.add(imageLabel1);
         redPanel.add(imageLabel2);
         this.add(buttonStop);
